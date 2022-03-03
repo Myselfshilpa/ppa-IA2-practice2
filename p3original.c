@@ -1,35 +1,26 @@
+#include <stdio.h>
+#include<math.h>
+void input(float*x1, float*x2, float*y1, float*y2)
+{
+  printf("Enter the value\n");
+  scanf("%f%f%f%f",x1,x2,y1,y2);
+}
+void find_output(float x1, float x2, float y1,float y2, float*area)
+{
+  *area=sqrt (pow(x2-x1,2)+pow(y2-y1,2));
+}
+void output(float x1, float x2, float y1, float y2, float area)
+{
+  printf("therefore the distance between points are %f",area);
 
-#include<stdio.h>
-int input_number()
-{
-  int n;
-  printf("enter n value\n");
-  scanf("%d",&n);
-  return n;
-}
-int is_composite(int n)
-{
-  int i;
-  for(i=2;i<=n/2;++i)
-  {
-    if(n%i==0)
-    return 0;
-    else
-    return 1;
-  }
-}
-void output(int n,int composite)
-{
-  if(composite==0)
-  printf("COMPOSITE");
-  else
-  printf("NOT COMPOSITE");
+  
 }
 int main()
 {
-  int n,x;
-  n=input_number();
-  x=is_composite(n);
-  output(n,x);
+  float x1,x2,y1,y2,area;
+  input(&x1,&x2,&y1,&y2);
+  find_output(x1,x2,y1,y2,&area);
+  output(x1,x2,y1,y2,area);
   return 0;
+  
 }
